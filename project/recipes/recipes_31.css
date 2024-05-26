@@ -76,14 +76,14 @@ Product
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   justify-content: center;
   align-items: center;
-  margin: 3rem auto;
+  margin: 2rem auto;
   gap: 3rem;
 }
 .products-container .single-product {
   border: 1px solid #a9b6bd;
   border-radius: var(--borderRadius);
   box-shadow: var(--shadow-3);
-  min-height: 500px;
+  min-height: 480px;
 }
 .products-container .single-product footer {
   padding: 0.75rem 0;
@@ -93,12 +93,15 @@ Product
   text-transform: capitalize;
   letter-spacing: var(--letterSpacing);
   color: var(--grey-500);
+  flex: 1;
 }
 .products-container .single-product footer .price {
   color: var(--grey-700);
   font-weight: 700;
   font-size: 1rem;
-  min-height: 120px;
+  flex: 1 120px;
+  text-align: left;
+  padding: 0px 1rem
   /* letter-spacing: var(--letterSpacing); */
 }
 .products-container .single-product-img {
@@ -118,8 +121,30 @@ Product
   margin-right: 3rem;
 }
 
+.recipes-subtitle {
+  text-align: left;
+  padding-left: 15vh;
+}
+
+.recipes-subtitle a {
+  color: rgb(75 0 4);
+  text-decoration: unset;
+  font-size: 1.2rem;
+}
+
+.recipes-subtitle a:hover {
+  color: #a62b00;
+  /* text-decoration: underline; */
+}
+
+.card-footer {
+  display: flex;
+  flex-direction: column;
+}
+
 .recipes-detail {
   text-align: center;
+  flex: 1;
 }
 
 .recipes-detail-btn {
@@ -130,5 +155,19 @@ Product
   border-radius: 0.5rem;
   font-weight: 700;
   cursor: pointer;
+}
+
+.recipes-container {
+  width: 80vw;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  justify-content: center;
+  align-items: center;
+  margin: 3rem auto;
+  gap: 3rem;
+}
+
+.red {
+  color: red;
 }
 /*# sourceMappingURL=p3_xx.css.map */

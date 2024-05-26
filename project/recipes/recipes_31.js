@@ -20,26 +20,25 @@ const getRecipesSupabase_31 = async () => {
 };
 
 const displayProducts = (products) => {
-  /*把products陣列用map轉到另外一個productsContent陣列*/
   let productsContent = products
     .map((product) => {
-      const { title, description, localImg } = product;
+      const { title, description, localimg } = product;
       //const { id } = product;
       return `
     <div class="single-product">
     <img
-      src=${localImg}
+      src=${localimg}
       class="single-product-img img"
       alt=${title}
     />
-    <footer>
+    <footer class="card-footer">
       <h3 class="name">${title}</h3>
       <span class="price">${description}</span>
+      <div class="recipes-detail"><button class="recipes-detail-btn">詳細資訊</button></div>
     </footer>
-    <div class="recipes-detail"><button class="recipes-detail-btn">詳細資訊</button></div>
   </div>
     `;
-    }) /*join把陣列為自串起來然後顯示 */
+    })
     .join('');
   productContainer.innerHTML = productsContent;
 };
@@ -70,10 +69,29 @@ const displayProducts = (products) => {
 //   DisplayProducts(products_31);
 // });
 
-/*async:非同步 */
+// function clickTab(target) {
+//   switch (target) {
+//     case 'recipes-intro':
+//       document.querySelector('#recipes-intro').style.color = '#a62b00';
+//       document.querySelector('#recipes-detail').style.color = 'rgb(75 0 4)';
+//       break;
+//     case 'recipes-detail':
+//       document.querySelector('#recipes-intro').style.color = 'rgb(75 0 4)';
+//       document.querySelector('#recipes-detail').style.color = '#a62b00';
+//       break;
+//   }
+// }
+
 document.addEventListener('DOMContentLoaded', async () => {
-  /*先抓資料getProductsSupabase，await後再product_31 */
   products2_31 = await getRecipesSupabase_31();
-  /*再繼續往下做 */
   displayProducts(products2_31);
+  // const introTab = document.getElementById('recipes-intro');
+  // introTab.addEventListener('click', clickTab('recipes-intro'));
+  // const detailTab = document.getElementById('recipes-detail');
+  // detailTab.addEventListener('click', clickTab('recipes-detail'));
 });
+
+// document.addEventListener('DOMContentLoaded', () => {
+//   const button = document.getElementById('greetButton');
+//   button.addEventListener('click', handleClick);
+// });

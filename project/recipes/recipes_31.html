@@ -10,6 +10,10 @@
   <body>
     <div style="text-align: center">
       <h1 class="recipes_title">All My Recipes</h1>
+      <!-- <div class="recipes-subtitle">
+        <a id="recipes-intro" href="#recipes-intro" onclick="clickTab('recipes-intro')">料理簡介</a>
+        <a id="recipes-detail" href="#recipes-detail" style="margin-left: 0.5rem" onclick="clickTab('recipes-detail')">料理食譜</a>
+      </div> -->
     </div>
 
     <div class="products-container">
@@ -25,11 +29,28 @@
         </footer>
       </div>
     </div>
+    <div id="recipes-detail">test</div>
     <script
       type="module"
       src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"
     ></script>
-    <script type="module" src="./p1_31.js"></script>
+    <script type="module" src="./recipes_31.js"></script>
+    <script>
+      function clickTab(target) {
+        switch (target) {
+          case 'recipes-intro':
+            document.querySelector('#recipes-intro').style.color = '#a62b00';
+            document.querySelector('#recipes-detail').style.color =
+              'rgb(75 0 4)';
+            break;
+          case 'recipes-detail':
+            document.querySelector('#recipes-intro').style.color =
+              'rgb(75 0 4)';
+            document.querySelector('#recipes-detail').style.color = '#a62b00';
+            break;
+        }
+      }
+    </script>
     <!-- <script type="module" src="./js/products_supa_31.js"></script> -->
   </body>
 </html>
