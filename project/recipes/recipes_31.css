@@ -76,7 +76,7 @@ Product
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   justify-content: center;
   align-items: center;
-  margin: 2rem auto;
+  margin: 1.5rem auto;
   gap: 3rem;
 }
 .products-container .single-product {
@@ -142,9 +142,10 @@ Product
   flex-direction: column;
 }
 
-.recipes-detail {
-  text-align: center;
-  flex: 1;
+#recipes-detail {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
 }
 
 .recipes-detail-btn {
@@ -167,7 +168,64 @@ Product
   gap: 3rem;
 }
 
-.red {
-  color: red;
+.recipes-detail-card {
+  display: flex;
+  padding: 0px 5vw;
+  /* margin: 0px 5vw; */
+  background-color: beige;
+  border-radius: 0.5rem;
+  flex: 1 450px;
+  /* margin-bottom: 1.5rem; */
+  padding-bottom: 1.5rem;
+}
+
+.recipes-detail-card-left {
+  flex: 1 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.recipes-detail-card-left > img {
+  max-width: 25vw;
+  border-radius: 0.5rem;
+}
+
+.recipes-detail-card-right {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+}
+
+.mb-unset {
+  margin-bottom: unset;
+}
+
+.modal {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+
+  background-color: white;
+  /* padding: 6rem; */
+  border-radius: 5px;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
+.close-modal-btn {
+  background-color: red;
+  color: white;
+  width: 6rem;
+  border-style: none;
+  border-radius: 5px;
+  height: 2rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
 }
 /*# sourceMappingURL=p3_xx.css.map */
