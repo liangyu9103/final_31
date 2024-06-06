@@ -1,18 +1,22 @@
 [My Github URL](https://github.com/liangyu9103/final_31)
 
-[My Vercel](https://vercel.com/liangyu9103s-projects/js_final_31)
+[My Vercel](https://final-31.vercel.app/)
 
 # API Project 簡要說明
 
 #### 重點 1
 
-> 經過詢問老師意見後，將滑動的功能改成開啟新視窗(圖 1)
-> 圖 1
-> ![圖1](./專案說明/專案說明1-1.png)
+> 本專案前後總共做了兩種不同的顯示功能，第一次先嘗試做了以點擊按鈕並在原頁面滑動至對應的圖片資訊
 
 #### 重點 2
 
+> 經過詢問老師意見後，將重點 1 滑動的功能改成開啟新視窗(圖 1)，點擊關閉可關閉視窗
+> 圖 1
+> ![圖1](./專案說明/專案說明1-1.png)
+
 #### 重點 3
+
+> 本專案沒有太多複雜的操作功能，屬於簡單瀏覽，前端瀏覽的內容是由資料庫連接顯示
 
 #### 重點 4
 
@@ -117,6 +121,12 @@ TRUNCATE TABLE recipes_31
 > ![圖4](./解決問題說明/解決問題說明2-4.png)
 
 #### => 問題 3
+
+- 問題：第一次部署上 Vercel 時，發現我 Vercel 上的 Project 是空的，也沒辦法按下 Visit 來開啟網頁，連結也怪怪的不是以 vercel.app 開啟
+
+---
+
+- 解決：回去看了老師教學 vercel 的影片，發現在建立 Vercel 時少了一個步驟，Environment Variables 裡面沒有把 SUPABASE_URL 跟 ANON_KEY 加入，嘗試重新建 Vercel 後，就可以成功了
 
 #### => 問題 4
 
