@@ -57,10 +57,20 @@ const displayProducts = (products) => {
     })
     .join('');
 
-    let recipesContent = products
-      .map((product) => {
-        const { id, title, localimg, ingredients, step1, step2, step3, step4, step5 } = product;
-        return `
+  let recipesContent = products
+    .map((product) => {
+      const {
+        id,
+        title,
+        localimg,
+        ingredients,
+        step1,
+        step2,
+        step3,
+        step4,
+        step5,
+      } = product;
+      return `
         <div id=${id} class="modal hidden">
           <div class="recipes-detail-card">
             <div class="recipes-detail-card-left">
@@ -98,57 +108,26 @@ const displayProducts = (products) => {
           </div>
         </div>
         `;
-      })
-      .join('');
+    })
+    .join('');
   productContainer.innerHTML = introContent;
   recipesContainer.innerHTML = recipesContent;
   setTimeout(() => {
     products.map((item) => {
       const { id } = item;
-      document.getElementById(id + '-btn').addEventListener('click', function () { showModal(id) });
-      document.getElementById(id + '-close').addEventListener('click', function () { closeModal(id) });
-    })
-  }, 500)
+      document
+        .getElementById(id + '-btn')
+        .addEventListener('click', function () {
+          showModal(id);
+        });
+      document
+        .getElementById(id + '-close')
+        .addEventListener('click', function () {
+          closeModal(id);
+        });
+    });
+  }, 500);
 };
-
-// const DisplayProducts = (products) => {
-//   let displayMenu = products
-//     .map((item) => {
-//       const { id, title, category, price, img, desc } = item;
-//       return `
-//     <div class="single-product">
-//     <img
-//       src=${img}
-//       class="single-product-img img"
-//       alt="high-back bench"
-//     />
-//     <footer>
-//       <h3 class="name">${title}</h3>
-//       <span class="price">$${price}</span>
-//     </footer>
-//   </div>
-//       `;
-//     })
-//     .join('');
-//   productContainer.innerHTML = displayMenu;
-// };
-
-// document.addEventListener('DOMContentLoaded', () => {
-//   DisplayProducts(products_31);
-// });
-
-// function clickTab(target) {
-//   switch (target) {
-//     case 'recipes-intro':
-//       document.querySelector('#recipes-intro').style.color = '#a62b00';
-//       document.querySelector('#recipes-detail').style.color = 'rgb(75 0 4)';
-//       break;
-//     case 'recipes-detail':
-//       document.querySelector('#recipes-intro').style.color = 'rgb(75 0 4)';
-//       document.querySelector('#recipes-detail').style.color = '#a62b00';
-//       break;
-//   }
-// }
 
 document.addEventListener('DOMContentLoaded', async () => {
   products2_31 = await getRecipesSupabase_31();

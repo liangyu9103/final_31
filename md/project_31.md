@@ -1,6 +1,6 @@
 [My Github URL](https://github.com/liangyu9103/final_31)
 
-[My Vercel 尚未實作]()
+[My Vercel](https://vercel.com/liangyu9103s-projects/js_final_31)
 
 # API Project 簡要說明
 
